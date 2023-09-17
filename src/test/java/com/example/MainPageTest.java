@@ -21,7 +21,7 @@ public class MainPageTest {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.bing.com/");
+        driver.get("https://www.google.com/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
 
@@ -38,6 +38,8 @@ public class MainPageTest {
     @Test
     public void search() throws InterruptedException {
 
+        driver.navigate().to("https://www.avito.ru/");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         WebElement searchField = driver.findElement(By.cssSelector("#sb_form_q"));
         searchField.sendKeys("Test");
         Thread.sleep(3000);
